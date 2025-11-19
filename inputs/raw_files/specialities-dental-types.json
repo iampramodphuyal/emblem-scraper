@@ -1,0 +1,65 @@
+[
+    {
+      "brand": "GHI",
+      "specialty_type": "Specialist",
+      "specialty_code": "GHI14",
+      "code": "Dental Group",
+      "description": "Dental Group"
+    },
+    {
+      "brand": "GHI",
+      "specialty_type": "Specialist",
+      "specialty_code": "GHI19",
+      "code": "Endodontic Dentistry",
+      "description": "Endodontist"
+    },
+    {
+      "brand": "GHI",
+      "specialty_type": "Specialist",
+      "specialty_code": "GHI22",
+      "code": "General Dentistry",
+      "description": "General Dentist"
+    },
+    {
+      "brand": "GHI",
+      "specialty_type": "Specialist",
+      "specialty_code": "GHI50",
+      "code": "Oral & Maxillofacial Surgery",
+      "description": "Oral Surgery"
+    },
+    {
+      "brand": "GHI",
+      "specialty_type": "Specialist",
+      "specialty_code": "GHI52",
+      "code": "Orthodontic Dentistry",
+      "description": "Orthodontist"
+    },
+    {
+      "brand": "GHI",
+      "specialty_type": "Specialist",
+      "specialty_code": "GHI60",
+      "code": "Pediatric Dentistry,Pedodontic Dentistry",
+      "description": "Pediatric Dentist"
+    },
+    {
+      "brand": "GHI",
+      "specialty_type": "Specialist",
+      "specialty_code": "GHI86",
+      "code": "Periodontic Dentistry",
+      "description": "Periodontist"
+    },
+    {
+      "brand": "GHI",
+      "specialty_type": "Specialist",
+      "specialty_code": "GHI94",
+      "code": "Prosthodontist Dentistry",
+      "description": "Prosthodontics"
+    },
+    {
+      "brand": "GHI",
+      "code": "All Specialties",
+      "description": "All Specialties",
+      "specialty_code": "GHI00",
+      "specialty_type": "Specialist"
+    }
+]

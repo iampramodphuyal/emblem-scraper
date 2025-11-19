@@ -1,0 +1,478 @@
+[
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP10",
+      "code": "Abdominal Surgery",
+      "description": "Abdominal Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP11",
+      "code": "Acupuncture",
+      "description": "Acupuncture"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP12",
+      "code": "Addiction Medicine",
+      "description": "Addiction Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP13",
+      "code": "Adolescent Medicine",
+      "description": "Adolescent Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP14",
+      "code": "Allergy & Immunology",
+      "description": "Allergy & Immunology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP15",
+      "code": "Audiology",
+      "description": "Audiology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP16",
+      "code": "Cardiology",
+      "description": "Cardiology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP17",
+      "code": "Cardiovascular Surgery",
+      "description": "Cardiovascular Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP19",
+      "code": "Clinical Genetics",
+      "description": "Clinical Genetics"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP20",
+      "code": "Colon and Rectal Surgery",
+      "description": "Colon and Rectal Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP21",
+      "code": "Dermatology",
+      "description": "Dermatology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP44",
+      "code": "Dietician",
+      "description": "Nutrition Services"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP22",
+      "code": "Endocrinology & Metabolism",
+      "description": "Endocrinology & Metabolism"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP23",
+      "code": "ENT (Ear, Nose & Throat)",
+      "description": "ENT (Ear, Nose & Throat)"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP24",
+      "code": "Family Practice",
+      "description": "Family Practice"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "PCP",
+      "specialty_code": "HIP3",
+      "code": "Family Practice & Osteopath Manipulative Medicine",
+      "description": "Family Practice & Osteopath Manipulative Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP25",
+      "code": "Gastroenterology",
+      "description": "Gastroenterology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP26",
+      "code": "General Practice",
+      "description": "General Practice"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP27",
+      "code": "Geriatric Medicine",
+      "description": "Geriatric Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP28",
+      "code": "Hand Surgery",
+      "description": "Hand Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP29",
+      "code": "Head & Neck Surgery",
+      "description": "Head & Neck Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP30",
+      "code": "Hematology",
+      "description": "Hematology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP31",
+      "code": "Hospice and Palliative Care",
+      "description": "Hospice and Palliative Care"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP32",
+      "code": "Hyperbaric Medicine",
+      "description": "Hyperbaric Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP33",
+      "code": "Infectious Disease Medicine",
+      "description": "Infectious Disease Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP34",
+      "code": "Internal Medicine",
+      "description": "Internal Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP35",
+      "code": "Interventional Radiology",
+      "description": "Interventional Radiology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP36",
+      "code": "Medical Genetics",
+      "description": "Medical Genetics"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP38",
+      "code": "Neonatalogy",
+      "description": "Neonatalogy"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP39",
+      "code": "Nephrology",
+      "description": "Nephrology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP40",
+      "code": "Neurological Surgery",
+      "description": "Neurological Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP41",
+      "code": "Neurology",
+      "description": "Neurology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP42",
+      "code": "Nuclear Medicine",
+      "description": "Nuclear Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP43",
+      "code": "Nurse Practitioner",
+      "description": "Nurse Practitioner"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP45",
+      "code": "Obstetrics & Gynecology",
+      "description": "Obstetrics and Gynecology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP46",
+      "code": "Occupational Medicine",
+      "description": "Occupational Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP47",
+      "code": "Oncology",
+      "description": "Oncology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP48",
+      "code": "Ophthalmology",
+      "description": "Ophthalmology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP95",
+      "code": "Optician",
+      "description": "Optician"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP49",
+      "code": "Optometry",
+      "description": "Optometry"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP50",
+      "code": "Oral & Maxillofacial Surgery",
+      "description": "Oral & Maxillofacial Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP51",
+      "code": "Orthopaedic Surgery",
+      "description": "Orthopaedic Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP52",
+      "code": "Osteopathy",
+      "description": "Osteopathy"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP53",
+      "code": "Pain Management",
+      "description": "Pain Management"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP54",
+      "code": "Pediatric - General",
+      "description": "Pediatric - General"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP55",
+      "code": "Pediatric - Specialists",
+      "description": "Pediatric - Specialists"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP56",
+      "code": "Pediatric - Surgery",
+      "description": "Pediatric - Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP96",
+      "code": "Pediatric Ophthalmology",
+      "description": "Pediatric Ophthalmology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "PCP",
+      "specialty_code": "HIP6",
+      "code": "Pediatrics",
+      "description": "Pediatrics"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP57",
+      "code": "Physical Medicine & Rehabilitation",
+      "description": "Physical Medicine & Rehabilitation"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP58",
+      "code": "Physical Therapy",
+      "description": "Physical Therapy"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP59",
+      "code": "Physician Assistant",
+      "description": "Physician Assistant"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP60",
+      "code": "Plastic Surgery",
+      "description": "Plastic Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP61",
+      "code": "Podiatry",
+      "description": "Podiatry"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP62",
+      "code": "Pregnancy/Pre-Natal/Post-Partum",
+      "description": "Pregnancy/Pre-Natal/Post-Partum"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP63",
+      "code": "Preventive Medicine",
+      "description": "Preventive Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP64",
+      "code": "Primary Care Physicians",
+      "description": "Primary Care Physicians"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP98",
+      "code": "Psychology",
+      "description": "Psychology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP65",
+      "code": "Public Health & General Preventative Medicine",
+      "description": "Public Health & General Preventative Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP66",
+      "code": "Pulmonary Medicine",
+      "description": "Pulmonary Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP67",
+      "code": "Radiology",
+      "description": "Radiology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP68",
+      "code": "Rheumatology",
+      "description": "Rheumatology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP69",
+      "code": "Sleep Medicine",
+      "description": "Sleep Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP70",
+      "code": "Speech Therapy/Pathology",
+      "description": "Speech Therapy/Pathology"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP71",
+      "code": "Sports Medicine",
+      "description": "Sports Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP72",
+      "code": "Surgery",
+      "description": "Surgery"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "Specialist",
+      "specialty_code": "HIP73",
+      "code": "Urology",
+      "description": "Urology"
+    },
+    {
+      "brand": "HIP",
+      "code": "All Specialties",
+      "description": "All Specialties",
+      "specialty_code": "HIP00",
+      "specialty_type": "Specialist"
+    }
+  ]

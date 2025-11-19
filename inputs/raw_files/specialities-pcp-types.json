@@ -1,0 +1,44 @@
+[
+    {
+      "brand": "HIP",
+      "specialty_type": "PCP",
+      "specialty_code": "HIP2",
+      "code": "Family Practice",
+      "description": "Family Practice"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "PCP",
+      "specialty_code": "HIP3",
+      "code": "Family Practice & Osteopath Manipulative Medicine",
+      "description": "Family Practice & Osteopath Manipulative Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "PCP",
+      "specialty_code": "HIP4",
+      "code": "General Practice",
+      "description": "General Practice"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "PCP",
+      "specialty_code": "HIP5",
+      "code": "Internal Medicine",
+      "description": "Internal Medicine"
+    },
+    {
+      "brand": "HIP",
+      "specialty_type": "PCP",
+      "specialty_code": "HIP6",
+      "code": "Pediatrics",
+      "description": "Pediatrics"
+    },
+    {
+      "brand": "HIP",
+      "code": "All PCP Specialties",
+      "description": "All Specialties",
+      "specialty_code": "HIP00",
+      "specialty_type": "PCP"
+    }
+  ]

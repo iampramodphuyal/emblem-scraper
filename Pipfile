@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+browserforge = "*"
+dotenv = "*"
+playwright = "*"
+selenium = "*"
+webdriver-manager = "*"
+2captcha-python = "*"
+capsolver = "*"
+lmdb = "*"
+httpx = {extras = ["http2"], version = "*"}
+pandas = "*"
+openpyxl = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"

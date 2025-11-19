@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Primary and Specialty Care",
+        "type": "Doctor"
+    },
+    {
+        "name": "Primary Care Provider",
+        "type": "PCP"
+    },
+    {
+        "name": "Chiropractic Services",
+        "type": "Chiropractor"
+    }
+]
