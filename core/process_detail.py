@@ -8,7 +8,9 @@ import asyncio
 from .helpers import two_cap, capsolver, save_content_as_json, fake_solve_captcha
 from configs import HEADERS
 from settings import OUTPUT_PATH, SEQUENTIAL_FLOW
+from cache import CacheHandler
 
+cache = CacheHandler(use_existing_cache=True)
 client = BaseClient(base_url="https://my.emblemhealth.com", use_proxy=True, retries=False)
 logger = get_logger("Process Detail")
 
@@ -26,8 +28,12 @@ async def process_provider(provider: dict, plan_type:str, network_code:str, serv
     Returns:
         bool: True if the provider processing is successful, False otherwise.
     """
-    
+
     provider_id = provider['ProviderId']
+    if cache.exists(provider_id):
+        logger.info(f"Provider {provider['providerFullName']} | ID: {provider['ProviderId']} already processed. Skipping.")
+        return True
+        
     logger.info(f"Processing provider {provider['providerFullName']} | ID: {provider['ProviderId']}")
     aura_context = {"mode":"PROD","fwuid":"VFJhRGxfRlFsN29ySGg2SXFsaUZsQTFLcUUxeUY3ZVB6dE9hR0VheDVpb2cxMy4zMzU1NDQzMi41MDMzMTY0OA","app":"siteforce:communityApp","loaded":{"APPLICATION@markup://siteforce:communityApp":"1411_ppEHPnivv6tDSveOy-pRIw"},"dn":[],"globals":{},"uad":True}
     
