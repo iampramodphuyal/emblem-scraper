@@ -1,33 +1,82 @@
 import os
 import random
 from logger.logger import get_logger
+from urllib.parse import urljoin
 from settings import PLAYWRIGHT_SESSION_PATH, PROXY_URL, PROXY_USERNAME, PROXY_PASSWORD, PROXY_HOST, PROXY_PORT
 
 logger = get_logger("Helpers")
 
-sitekey = os.getenv('CAPTCHA_SITE_KEY', 'YOUR_SITE_KEY')
+base_url = "https://my.emblemhealth.com/member/s/find-care-plans"
+siteKey = os.getenv('CAPTCHA_SITE_KEY', 'YOUR_SITE_KEY')
 def two_cap():
     from twocaptcha import TwoCaptcha
     api_key = os.getenv('APIKEY_2CAPTCHA', 'YOUR_API_KEY')
-    
+    # solver = TwoCaptcha(api_key,defaultTimeout=120,pollingInterval=5)
     solver = TwoCaptcha(api_key)
+    # test with config.
+    config = {
+            'server':'2captcha.com',
+            'apiKey':api_key,
+            # 'callback':"___grecaptcha_cfg.clients['100000']['Z']['Z']['promise-callback']",
+            'callback':False,
+            'defaultTimeout':120,
+            'recaptchaTimeout':600,
+            'pollingInterval':10,
+            'extendedResponse':False,
+            'softId':'',
+        }
+    # solver = TwoCaptcha(**config)
 
     try:
         result = solver.recaptcha(
-            sitekey=sitekey,
-            # url='https://my.emblemhealth.com/member/s/find-care-plans',
+            sitekey=siteKey,
             url='https://my.emblemhealth.com/member/s/find-care-search?action=findcaresearch&isPublic=true&publicPage=Plan&lobId=1012&lobMctrType=1001&grgrMctrType=NOT%20APPLICABLE&productDescription=NOT%20APPLICABLE&groupNum=NOT%20APPLICABLE&coverageType=M&networkCode=D013%2C%20D014%2C%20D004%2C%20D005%2C%20D006%2C%20D003&network=Enhanced%20Care%20Prime%20NYSOH%20Marketplace%20Network&planName=Essential%20Plan&fhn&category=Individual%20%26%20Family%20Plans&preferred=No&coe=No',
-            # version='v2',
-            invisible=1,
-            # action="captchaValidation"
-            )
+            version='v3',
+            # invisible=1,
+            action='captchaValidation',
+            minScore=0.9,
+            proxy={
+                'type': 'HTTP',    # or HTTPS, SOCKS4, SOCKS5
+                'uri': f"{PROXY_USERNAME}:{PROXY_PASSWORD}@{PROXY_HOST}:{PROXY_PORT}"
+            }
 
+        )
+        balance = solver.balance()
     except Exception as e:
         logger.error(f"Error solving captcha: {e}")
 
     else:
-        logger.info(f"Captcha solved: {result['code']}")
+        logger.debug(f"Captcha solved: {result['code']} | Balance: {balance}")
         return result['code']
+
+
+async def solve_captcha(provider: str = 'capsolver') -> str:
+    """
+    Solves a captcha using the specified provider.
+
+    Args:
+        provider (str): The captcha solving service to use.
+                        Accepted values are "capsolver", "2captcha", or "browser automation".
+                        Default is "capsolver".
+
+    Returns:
+        str: The captcha token or solution.
+
+    Raises:
+        ValueError: If an unsupported provider is specified.
+    """
+
+    if provider == "capsolver":
+        return capsolver()
+    elif provider == "2captcha":
+        return two_cap()
+    elif provider == "browser":
+        return await fake_solve_captcha()
+    else:
+        logger.error(f"Unsupported captcha provider: {provider}")
+        return ""
+
+
 
 def capsolver():
     import capsolver
@@ -39,9 +88,9 @@ def capsolver():
             # "type": "ReCaptchaV2Task",
             # "websiteURL": 'https://my.emblemhealth.com/member/s/find-care-plans',
             "websiteURL": 'https://my.emblemhealth.com/member/s/find-care-search?action=findcaresearch&isPublic=true&publicPage=Plan&lobId=1012&lobMctrType=1001&grgrMctrType=NOT%20APPLICABLE&productDescription=NOT%20APPLICABLE&groupNum=NOT%20APPLICABLE&coverageType=M&networkCode=D013%2C%20D014%2C%20D004%2C%20D005%2C%20D006%2C%20D003&network=Enhanced%20Care%20Prime%20NYSOH%20Marketplace%20Network&planName=Essential%20Plan&fhn&category=Individual%20%26%20Family%20Plans&preferred=No&coe=No',
-            "websiteKey": sitekey,
+            "websiteKey": siteKey,
             'isInvisible': True,
-            'pageAction': 'captchaValidation',
+            # 'pageAction': 'captchaValidation',
             'minScore': 0.9,
             # 'proxy': f"{PROXY_URL}"
           })
@@ -51,6 +100,80 @@ def capsolver():
 
     return solution['gRecaptchaResponse']
 
+
+async def get_recaptcha_token(page, site_key, action='captchaValidation', selector='#recaptcha'):
+    js = """
+    async ({siteKey, action, selector}) => {
+
+        function loadRecaptcha() {
+            return new Promise((resolve) => {
+                if (typeof grecaptcha !== "undefined") {
+                    resolve();
+                    return;
+                }
+
+                const script = document.createElement("script");
+                script.src = "https://www.google.com/recaptcha/api.js?render=" + siteKey;
+                script.async = true;
+                script.defer = true;
+
+                script.onload = () => resolve();
+                document.head.appendChild(script);
+            });
+        }
+
+        function detectVersion() {
+            if (typeof grecaptcha.execute === "function" && grecaptcha.execute.length === 2) {
+                return 3; // v3
+            }
+            return 2; // v2 invisible
+        }
+
+        function getV3Token() {
+            return new Promise((resolve) => {
+                grecaptcha.ready(() => {
+                    grecaptcha.execute(siteKey, { action }).then(resolve);
+                });
+            });
+        }
+
+        function getV2InvisibleToken() {
+            return new Promise((resolve) => {
+
+                let el = document.querySelector(selector);
+                if (!el) {
+                    el = document.createElement("div");
+                    el.id = selector.replace("#", "");
+                    document.body.appendChild(el);
+                }
+
+                const widgetId = grecaptcha.render(selector.replace("#", ""), {
+                    sitekey: siteKey,
+                    size: "invisible",
+                    callback: resolve
+                });
+
+                grecaptcha.execute(widgetId);
+            });
+        }
+
+        await loadRecaptcha();
+        await new Promise(r => setTimeout(r, 1200));
+
+        const version = detectVersion();
+
+        if (version === 3) return await getV3Token();
+        return await getV2InvisibleToken();
+    }();
+    """
+
+    token = await page.evaluate(js, {
+        "siteKey": site_key,
+        "action": action,
+        "selector": selector
+    })
+
+    return token
 
 async def fake_solve_captcha(page_url: str = "https://my.emblemhealth.com/member/s/find-care-plans"):
     """
@@ -142,12 +265,17 @@ async def fake_solve_captcha(page_url: str = "https://my.emblemhealth.com/member
                 
                 # Execute your JS code in the page context
                 site_key = '6LcNq-wpAAAAAPupbdPcNjDpmhx4_HbfSmRW2ME4'
-                result = await page.evaluate(js_code, {"siteKey": site_key, "action": "captchaValidation"})
-                print("✅ JS execution result:", result)
+                # result = await page.evaluate(js_code, {"siteKey": site_key, "action": "captchaValidation"})
+                token = await get_recaptcha_token(
+                            page,
+                            site_key="YOUR_SITE_KEY",
+                            action="captchaValidation"
+                        )
+                print("✅ JS execution result:", token)
 
                 # await browser.close()
                 await context.close()
-                return result
+                return token
 
         except Error as e:
             print(f"❌ Playwright error: {e}")

@@ -6,7 +6,7 @@ import json
 import os
 import random
 import asyncio
-from .helpers import two_cap, capsolver, save_content_as_json, fake_solve_captcha
+from .helpers import save_content_as_json, solve_captcha
 from configs import HEADERS
 from settings import OUTPUT_PATH, SEQUENTIAL_FLOW
 
@@ -26,7 +26,6 @@ async def search_doctors(search_params: dict={}):
     
     os.makedirs(f"{OUTPUT_PATH}/listing", exist_ok=True)
 
-    initial_rand = random.randint(37, 42)
     specialities = search_params.get("specialities", [])
     
     for _, sp in enumerate(specialities):
@@ -40,16 +39,11 @@ async def search_doctors(search_params: dict={}):
         logger.info(f"Processing specialty: {specialty} ({service_type}) | Zip: {zip_code}")
 
         while page <= total_pages:
-            random_increment = random.randint(4, 6)
-            random_int = (page - 1) * random_increment
-            rid = initial_rand if page == 1 else (initial_rand + random_int)
-            
             start = (page - 1) * page_size
-            url = f"/member/s/sfsites/aura?r={rid}&aura.ApexAction.execute=1"
-            logger.info(f"Fetching page {page} of {total_pages} | Endpoint: {url} | Zip: {zip_code} | Start: {start}")
+            logger.info(f"Fetching page {page} of {total_pages} | Zip: {zip_code} | Start: {start}")
             
             try:
-                response = await make_request(page, url, service_type, specialty, search_params, start)
+                response = await make_request(page, service_type, specialty, search_params, start)
                 
                 # Check if response is empty (failed after retries)
                 if not response:
@@ -83,7 +77,7 @@ async def search_doctors(search_params: dict={}):
         logger.info(f"Completed specialty: {specialty} ({service_type}) | Total pages processed: {page - 1}")
         
 
-async def make_request(page: int, url: str, service_type: str, specialty: str, search_params: dict={}, start: int = 0) -> dict:
+async def make_request(page: int, service_type: str, specialty: str, search_params: dict={}, start: int = 0) -> dict:
     zip_code = search_params.get("zipCode", "10001")
     distance = search_params.get("distance", "50mi")
     first_name = search_params.get("firstName", "")
@@ -109,9 +103,21 @@ async def make_request(page: int, url: str, service_type: str, specialty: str, s
     max_attempts = 10
     
     for attempt in range(1, max_attempts + 1):
-        captcha_token = capsolver()
-        logger.debug(f"Using captcha token: {captcha_token}")
+        initial_rand = random.randint(37, 42)
+        random_increment = random.randint(4, 6)
+        random_int = (page - 1) * random_increment
+        rid = initial_rand if page == 1 else (initial_rand + random_int)
+        
+        url = f"/member/s/sfsites/aura?r={rid}&aura.ApexAction.execute=1"
+
+        # captcha_token = await solve_captcha('2captcha')
+        captcha_token = await solve_captcha()
+    
+        if not captcha_token:
+            logger.error("Failed to solve captcha after multiple attempts")
             
+        logger.debug(f"Using captcha token: {captcha_token}")
+        
         payload = {
             "lastName": last_name,
             "tenantId": "EH",

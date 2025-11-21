@@ -1,6 +1,12 @@
-2025/11/19-01:32:45.002 3df77 Reusing MANIFEST /home/pramod/Documents/pramod/task/8nov/emblem_scraper/sessions/recaptcha_profile/Default/IndexedDB/https_my.emblemhealth.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/11/19-01:32:45.002 3df77 Recovering log #7
-2025/11/19-01:32:45.006 3df77 Reusing old log /home/pramod/Documents/pramod/task/8nov/emblem_scraper/sessions/recaptcha_profile/Default/IndexedDB/https_my.emblemhealth.com_0.indexeddb.leveldb/000007.log 
-2025/11/19-01:32:47.562 3df79 Level-0 table #11: started
-2025/11/19-01:32:47.570 3df79 Level-0 table #11: 4159627 bytes OK
-2025/11/19-01:32:47.573 3df79 Delete type=0 #7
+2025/11/21-22:26:47.663 4f0c Reusing MANIFEST /home/pramod/Documents/pramod/task/8nov/emblem_scraper/sessions/recaptcha_profile/Default/IndexedDB/https_my.emblemhealth.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/11/21-22:26:47.663 4f0c Recovering log #10
+2025/11/21-22:26:47.668 4f0c Reusing old log /home/pramod/Documents/pramod/task/8nov/emblem_scraper/sessions/recaptcha_profile/Default/IndexedDB/https_my.emblemhealth.com_0.indexeddb.leveldb/000010.log 
+2025/11/21-22:26:49.207 4f0a Compacting 1@1 + 1@2 files
+2025/11/21-22:26:49.211 4f0a Generated table #15@1: 343 keys, 156336 bytes
+2025/11/21-22:26:49.211 4f0a Compacted 1@1 + 1@2 files => 156336 bytes
+2025/11/21-22:26:49.213 4f0a compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/11/21-22:26:49.213 4f0a Delete type=2 #5
+2025/11/21-22:26:49.213 4f0a Delete type=2 #13
+2025/11/21-22:26:54.921 4f0c Level-0 table #17: started
+2025/11/21-22:26:54.931 4f0c Level-0 table #17: 4212757 bytes OK
+2025/11/21-22:26:54.934 4f0c Delete type=0 #10

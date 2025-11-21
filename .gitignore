@@ -2,3 +2,5 @@ raw/
 .env
 logs/
 sessions/
+lmdb_cache/
+outputs/

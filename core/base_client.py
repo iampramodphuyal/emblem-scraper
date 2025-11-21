@@ -97,7 +97,7 @@ class BaseClient:
 
         for attempt in range(1, self.retries + 1):
             try:
-                async with httpx.AsyncClient(http2=True,proxy=self.proxies, timeout=self.timeout) as client:
+                async with httpx.AsyncClient(proxy=self.proxies, timeout=self.timeout, verify=False, http2=True) as client:
                     response = await client.request(method, url, **kwargs)
                 response.raise_for_status()
                 return {

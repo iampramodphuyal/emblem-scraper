@@ -27,7 +27,7 @@ async def main(inputs:dict):
     pcp_specialities = [{**d, "type": "PCP"} for d in PCP_SPECIALITIES]
 
     specialities = doctor_specialities + pcp_specialities
-    
+    zipcode = str(inputs['zip']).zfill(5)
     for plan in PLANS:
         logger.info(f"Processing plan: {plan}")
 
@@ -40,7 +40,7 @@ async def main(inputs:dict):
             specialities = dental_specialities
      
         await search_doctors(search_params={
-            "zipCode": f"{inputs['zip']}",
+            "zipCode": zipcode,
             "planType": plan_type,
             "networkCode": plan['NetworkCode'],
             "size": 50,
